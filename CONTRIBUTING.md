@@ -1,20 +1,67 @@
-# Contributing Guidelines
 
-## Workflow
-1. Create a branch: `feature/xyz`, `bugfix/abc`
-2. Commit changes with clear messages (use Huly/Issue ID if applicable)
-3. Open a Pull Request to `main` branch)
-4. Request at least **1 peer review + 1 QA review**
-5. Ensure CI checks pass before merge
+# Contributing Guidelines - Loginware Softtec PVT LTD
 
-## Code Standards
-- Follow company coding style guides
-- Ensure linting and tests pass
-- Avoid committing secrets or environment configs
-- Write meaningful documentation for new modules
+## Welcome to Our Development Team
 
-## Reporting Issues
-- Use **Bug Report** template for defects
-- Use **Feature Request** template for enhancements
-- Use **Support Request** template for support
-- Assign correct labels and link to tickets
+Thank you for contributing to **Loginware Softtec's** Industry 4.0 IIOT solutions.  
+This guide outlines our development standards and contribution process.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Company GitHub account with **organization access**
+- Local development environment setup
+- **Docker Desktop** installed
+- Required **IDE configurations**
+ 
+
+### First-Time Setup
+1. Clone the repository  
+2. Install dependencies (see project `README.md`)  
+3. Configure environment variables (**contact Tech Leads**)  
+4. Run initial tests to verify setup  
+5. Review project-specific documentation  
+
+---
+
+## 🔄 Development Workflow
+
+### Branch Strategy - GitHub Flow
+
+```
+
+main (production-ready)
+↑
+feature/your-feature-name → Pull Request → Review → Merge
+
+```
+
+---
+
+### Branch Naming Conventions
+- **Features** → `feature/user-authentication`
+- **Bug Fixes** → `bugfix/login-validation-error`
+- **Hotfixes** → `hotfix/critical-security-patch`
+
+---
+
+### Commit Message Format
+
+We follow the **Conventional Commits** standard:
+
+```
+
+type(scope): description
+
+```
+
+#### Examples
+- `feat(auth): add OAuth2 integration`
+- `fix(api): resolve database connection timeout`
+- `docs(readme): update installation instructions`
+
+---
+
+✅ Following these guidelines ensures consistency, code quality, and smooth collaboration across our teams.
