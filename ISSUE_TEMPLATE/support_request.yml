@@ -1,57 +1,241 @@
-name: Support Request
-description: Request help or clarification from the internal team
-title: "[SUPPORT] <short summary>"
-labels: [support, internal]
+name: 🆘 Support Request
+description: Request technical support or assistance
+title: "[SUPPORT] - "
+labels: ["support", "needs-attention"]
 assignees: []
 
 body:
   - type: markdown
     attributes:
       value: |
-        ## 📌 Internal Support Request
-        Please fill out the details below to help the team assist you effectively.
-
-  - type: textarea
-    id: summary
-    attributes:
-      label: Summary
-      description: What do you need help with?
-      placeholder: e.g. Unable to connect to staging DB, error during build, etc.
-    validations:
-      required: true
-
-  - type: textarea
-    id: details
-    attributes:
-      label: Details
-      description: Provide background context, related services, or error information.
-      placeholder: Add logs, screenshots, error messages, or steps you tried.
-    validations:
-      required: true
+        ## 🆘 Support Request - Loginware Softtec PVT LTD
+        
+        Need technical support or assistance? Please provide the information below to help us assist you quickly.
+        
+        **⚠️ CONFIDENTIAL**: This request contains internal company information. Do not share outside the organization.
 
   - type: dropdown
     id: urgency
     attributes:
-      label: Urgency
-      description: How critical is this request?
+      label: Urgency Level
+      description: How urgent is this support request?
       options:
-        - 🔴 Critical (blocks production or release)
-        - 🟠 Medium (affects development/testing)
-        - 🟢 Low (general inquiry)
+        - Critical - Production down, blocking multiple users
+        - High - Blocking work, needs immediate attention
+        - Medium - Hindering productivity, needs attention soon
+        - Low - General question, no immediate blocking issue
+      default: 2
+    validations:
+      required: true
+
+  - type: dropdown
+    id: support-type
+    attributes:
+      label: Support Type
+      description: What type of support do you need?
+      options:
+        - Technical Issue/Troubleshooting
+        - Development Environment Setup
+        - Account/Access Issues
+        - CI/CD Pipeline Problems
+        - Database Connection/Query Issues
+        - Security/Authentication Problems
+        - Documentation/How-to Questions
+        - Third-party Integration Issues
+        - Performance/Optimization Help
+        - Code Review/Architecture Guidance
+        - Other (specify in description)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: system
+    attributes:
+      label: Related System/Technology
+      description: Which system or technology is this related to?
+      options:
+        - ASP.NET Backend (.NET 9.0)
+        - Node.js/Express.js API
+        - Python (Flask/Django)
+        - Next.js Frontend
+        - React Native Mobile
+        - AngularJS Web App
+        - PostgreSQL Database
+        - Docker/Containers
+        - Kubernetes/EKS
+        - CI/CD (GitHub Actions/Jenkins)
+        - Development Environment
+        - Multiple Systems
+        - Other/General
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: Issue Description
+      description: Clearly describe the issue or question you need help with
+      placeholder: |
+        Please provide a detailed description:
+        - What are you trying to accomplish?
+        - What specific problem are you encountering?
+        - What have you already tried?
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-behavior
+    attributes:
+      label: Current Behavior
+      description: What is currently happening?
+      placeholder: Describe what you're experiencing now...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+      placeholder: Describe what you expected to happen...
+    validations:
+      required: true
+
+  - type: textarea
+    id: error-messages
+    attributes:
+      label: Error Messages/Logs
+      description: Include any error messages, stack traces, or relevant logs
+      placeholder: |
+        ```
+        Paste error messages, logs, or stack traces here
+        (Remove any sensitive information like passwords, keys, etc.)
+        ```
+      render: shell
+
+  - type: textarea
+    id: environment-info
+    attributes:
+      label: Environment Information
+      description: Provide relevant environment details
+      placeholder: |
+        - Operating System: [e.g., Windows 11, macOS 12, Ubuntu 20.04]
+        - Development Environment: [e.g., Visual Studio 2022, VS Code]
+        - Runtime Version: [e.g., .NET 9.0, Node.js 18.x, Python 3.9]
+        - Database Version: [e.g., PostgreSQL 13.4]
+        - Browser: [if applicable, e.g., Chrome 91, Firefox 89]
+        - Docker Version: [if applicable]
+        - Other relevant versions
+
+  - type: textarea
+    id: steps-taken
+    attributes:
+      label: Troubleshooting Steps Already Taken
+      description: What have you already tried to resolve this issue?
+      placeholder: |
+        List the steps you've already taken:
+        - Checked documentation
+        - Searched existing issues
+        - Restarted services
+        - Cleared cache
+        - Consulted with team members
+        - Other attempts...
+
+  - type: dropdown
+    id: blocking
+    attributes:
+      label: Is this blocking your work?
+      description: Are you unable to continue your current task due to this issue?
+      options:
+        - "Yes - Completely blocked, cannot proceed"
+        - "Partially - Can work on other tasks but this is important"
+        - "No - Not blocking, but would like to resolve"
+      default: 1
     validations:
       required: true
 
   - type: input
-    id: environment
+    id: deadline
     attributes:
-      label: Environment
-      description: Which environment is affected? (dev, staging, production, etc.)
-      placeholder: staging / production / local
-    validations:
-      required: false
+      label: Deadline (if applicable)
+      description: Is there a specific deadline when you need this resolved?
+      placeholder: "e.g., End of day, End of week, Before deployment on Friday"
 
   - type: textarea
-    id: additional
+    id: business-impact
     attributes:
-      label: Additional Notes
-      description: Add any references (JIRA ticket, Slack thread, PR link, etc.)
+      label: Business Impact
+      description: How does this issue affect business operations or project delivery?
+      placeholder: |
+        Describe the impact:
+        - Affects customer deliverables
+        - Delays project timeline
+        - Impacts team productivity
+        - Other business consequences
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Any other information that might be helpful
+      placeholder: |
+        Additional context:
+        - Recent changes made to the system
+        - Related work or features
+        - Screenshots (remove sensitive data)
+        - Links to relevant documentation
+        - Team members already consulted
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Support Request Checklist
+      description: Please confirm the following
+      options:
+        - label: I have searched existing issues and documentation
+          required: true
+        - label: I have tried basic troubleshooting steps
+          required: true
+        - label: I have provided sufficient detail to understand the issue
+          required: true
+        - label: I have removed sensitive information (passwords, keys, etc.)
+          required: true
+        - label: I have set appropriate urgency level
+          required: true
+
+  - type: dropdown
+    id: preferred-contact
+    attributes:
+      label: Preferred Contact Method
+      description: How would you prefer to receive follow-up communication?
+      options:
+        - GitHub issue comments
+        - Email
+        - Team chat/Slack
+        - Video call/screen share
+        - In-person (if urgent)
+      default: 0
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        
+        **⏰ Response Time Expectations**
+        
+        - **Critical**: Within 2 hours during business hours
+        - **High**: Within 4 hours during business hours  
+        - **Medium**: Within 1 business day
+        - **Low**: Within 2-3 business days
+        
+        **🆘 Emergency Contact**
+        
+        For critical production issues outside business hours:
+        - Contact Tech Leads directly
+        - Use emergency escalation procedures
+        - Email: emergency-support@loginwaresofttec.com
+        
+        **🔒 CONFIDENTIALITY NOTICE**
+        
+        This support request contains proprietary information of Loginware Softtec PVT LTD. 
+        Unauthorized access or distribution is prohibited.
