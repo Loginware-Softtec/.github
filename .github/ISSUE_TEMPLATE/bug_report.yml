@@ -1,0 +1,180 @@
+name: 🐛 Bug Report
+description: Report a bug or unexpected behavior in our systems
+title: "[BUG] - "
+labels: ["bug", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🐛 Bug Report - Loginware Softtec PVT LTD
+        
+        Thank you for reporting a bug. Please fill out the information below to help us resolve the issue quickly.
+        
+        **⚠️ CONFIDENTIAL**: This issue contains internal company information. Do not share outside the organization.
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity Level
+      description: How severe is this bug?
+      options:
+        - Critical - System down, security issue, data loss
+        - High - Major functionality broken, affects multiple users
+        - Medium - Moderate impact, workaround available
+        - Low - Minor issue, cosmetic problem
+      default: 2
+    validations:
+      required: true
+
+  - type: dropdown
+    id: system
+    attributes:
+      label: Affected System/Component
+      description: Which system or component is affected?
+      options:
+        - ASP.NET Backend Service
+        - Node.js/Express API
+        - Python Flask/Django Service
+        - Next.js Frontend
+        - React Native Mobile App
+        - AngularJS Web App
+        - PostgreSQL Database
+        - CI/CD Pipeline
+        - Infrastructure/DevOps
+        - Other (specify in description)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      description: Where did you encounter this bug?
+      options:
+        - Production
+        - Development
+        - Local Development
+        - Testing/QA
+      default: 1
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is
+      placeholder: Describe the issue you encountered...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Detailed steps to reproduce the behavior
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Enter data '...'
+        4. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: A clear description of what you expected to happen
+      placeholder: What should have happened instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happened?
+      placeholder: Describe the actual behavior or error...
+    validations:
+      required: true
+
+  - type: textarea
+    id: error-logs
+    attributes:
+      label: Error Messages/Logs
+      description: Include any error messages, stack traces, or relevant logs
+      placeholder: |
+        ```
+        Paste error messages or logs here
+        ```
+      render: shell
+
+  - type: textarea
+    id: environment-details
+    attributes:
+      label: Environment Details
+      description: Provide relevant environment information
+      placeholder: |
+        - OS: [e.g. Windows 11, Ubuntu 20.04]
+        - Browser: [e.g. Chrome 91, Firefox 89]
+        - Version: [e.g. v2.1.0]
+        - Database Version: [e.g. PostgreSQL 13.4]
+        - Docker Version: [if applicable]
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Business Impact
+      description: How does this bug affect business operations or users?
+      placeholder: Describe the impact on users, processes, or business operations...
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Workaround (if any)
+      description: Is there a temporary workaround for this issue?
+      placeholder: Describe any temporary solutions or workarounds...
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context, screenshots, or information about the problem
+      placeholder: |
+        - Screenshots (remove sensitive data)
+        - Related issues or PRs
+        - Recent changes that might be related
+        - Customer/user feedback
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Reporter Checklist
+      description: Please confirm the following
+      options:
+        - label: I have searched existing issues to avoid duplicates
+          required: true
+        - label: I have removed any sensitive/confidential information
+          required: true
+        - label: I have provided sufficient detail to reproduce the issue
+          required: true
+        - label: I have assigned appropriate severity level
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        
+        **🔒 CONFIDENTIALITY NOTICE**
+        
+        This issue contains proprietary information of Loginware Softtec PVT LTD. 
+        Unauthorized access or distribution is prohibited.
+        
+        For urgent issues, contact:
+        - Tech Leads: Direct message or company channels
+        - Security Issues: security@loginwaresofttec.com
+        - Production Issues: Follow escalation procedures
