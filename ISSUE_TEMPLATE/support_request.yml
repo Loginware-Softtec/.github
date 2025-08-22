@@ -1,0 +1,57 @@
+name: Support Request
+description: Request help or clarification from the internal team
+title: "[SUPPORT] <short summary>"
+labels: [support, internal]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📌 Internal Support Request
+        Please fill out the details below to help the team assist you effectively.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What do you need help with?
+      placeholder: e.g. Unable to connect to staging DB, error during build, etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Provide background context, related services, or error information.
+      placeholder: Add logs, screenshots, error messages, or steps you tried.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Urgency
+      description: How critical is this request?
+      options:
+        - 🔴 Critical (blocks production or release)
+        - 🟠 Medium (affects development/testing)
+        - 🟢 Low (general inquiry)
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Which environment is affected? (dev, staging, production, etc.)
+      placeholder: staging / production / local
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Notes
+      description: Add any references (JIRA ticket, Slack thread, PR link, etc.)
